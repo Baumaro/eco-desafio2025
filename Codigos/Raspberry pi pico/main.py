@@ -2,10 +2,11 @@ try:
     import ujson as json
 except Exception:
     import json
-
+import glcdfont
 from machine import Pin, ADC, UART, SPI
 from ili9341 import ILI9341, color565
 import time
+import gc
 
 class RaspberryPiPico():
     def __init__(self):
@@ -33,47 +34,56 @@ class RaspberryPiPico():
     
     def leerMagnetico(self):
         magnetico = self.sensorMagnetico.read_u16() # Lee el valor del ADC del sensor magnetico
+        print(magnetico)
         return magnetico
     
 class Pantalla:
     def __init__(self, raspberry_pico):
         # Inicializa SPI (usar SPI1 por defecto, pines ajustables si necesitas)
-        spi = SPI(1, baudrate=20000000, polarity=0, phase=0, sck=Pin(11), mosi=Pin(10))
+        spi = SPI(1, baudrate=20000000, polarity=0, phase=0, sck=Pin(10), mosi=Pin(11))
         # guardar display
         self.display = ILI9341(spi, cs=raspberry_pico.cs, dc=raspberry_pico.dc, rst=raspberry_pico.rst, w = 340, h = 240, r = 0)
         self.font = None
+        
     def imprimirDatos(self, DatosBateria, DatosCinematica):
-        # Borra la pantalla
+        
         try:
-            self.display.fill(color565(255,255,255)) # Fondo blanco
+            # Limpia pantalla (usa fill si erase falla)
+            self.display.fill(color565(255, 255, 255))  # Fondo blanco
         except Exception:
-            pass
-        # Obtiene los últimos datos
+            self.display.erase()
+    
+
+    # Últimos datos
+        velocidad = distancia = 0
+        voltaje = corriente = 0
         if DatosCinematica:
             ultimo = DatosCinematica[-1]
-            velocidad = ultimo.get('velocidad', 0)
-            distancia = ultimo.get('distancia', 0)
-        else:
-            velocidad = 0
-            distancia = 0
+            velocidad = ultimo.get('velocidad',0)
+            distancia = ultimo.get('distancia',0)
         if DatosBateria:
             ultimo_b = DatosBateria[-1]
-            voltaje = ultimo_b.get('voltaje', 0)
-            corriente = ultimo_b.get('corriente', 0)
-        else:
-            voltaje = 0
-            corriente = 0
-        # Imprime los datos en pantalla
-        try:
-            self.display.write('VEL:{:.2f} m/s'.format(velocidad), 10, 20, color565(0,0,0))
-            self.display.write('DIST:{:.2f} m'.format(distancia), 10, 60, color565(0,0,0))
-            self.display.write('V:{:.2f} V'.format(voltaje), 10, 100, color565(0,0,0))
-            self.display.write('I:{:.2f} A'.format(corriente), 10, 140, color565(0,0,0))
-        except TypeError:
-            try:
-                self.display.write('VEL:{:.2f} m/s'.format(velocidad), 10, 20, self.font, color565(0,0,0))
-            except Exception:
-                pass
+            voltaje = ultimo_b.get('voltaje',0)
+            corriente = ultimo_b.get('corriente',0)
+
+    # Establece fuente y color
+        self.display.set_font(glcdfont)
+        self.display.set_color(color565(0,0,0), color565(255,255,255))  # negro sobre blanco
+
+    # Imprime cada dato
+        print("hola")
+        self.display.set_pos(10, 20)
+        self.display.write('VEL:{:.2f} m/s'.format(velocidad))
+
+        self.display.set_pos(10, 60)
+        self.display.write('DIST:{:.2f} m'.format(distancia))
+
+        self.display.set_pos(10, 100)
+        self.display.write('V:{:.2f} V'.format(voltaje))
+
+        self.display.set_pos(10, 140)
+        self.display.write('I:{:.2f} A'.format(corriente))
+
 
 
 class Teletrimetria:
@@ -91,7 +101,7 @@ class Teletrimetria:
 
     def convertirMagneticoDistancia(self, magnetico):
         # Ejemplo simple: si el sensor detecta cambio, suma el perímetro
-        if magnetico < 8000 :
+        if magnetico > 12000 :
             distancia = self.PerimetroRueda
         else:
             distancia = 0
@@ -126,13 +136,13 @@ class Teletrimetria:
     def agregarDatos(self, lineaDatosCinematica, LineaDatosBateria):
         self.DatosCinematica.append(lineaDatosCinematica)
         self.DatosBateria.append(LineaDatosBateria)
-
-        def exportarJSON(self):
-            paquete = {'cinematica': self.DatosCinematica, 'bateria': self.DatosBateria}
-            try:
-                return json.dumps(paquete)
-            except Exception:
-                return '{}'
+        
+    def exportarJSON(self):
+        paquete = {'cinematica': self.DatosCinematica, 'bateria': self.DatosBateria}
+        try:
+            return json.dumps(paquete)
+        except Exception:
+            return '{}'
 
 
 
@@ -151,13 +161,23 @@ def main():
         datos_cinematica = Sistema.ActualizarDatosCinematica()
         datos_bateria = Sistema.ActualizarDatosBateria()
         Sistema.agregarDatos(datos_cinematica, datos_bateria)
-        # Transmitir
-        mensaje = 'VEL:{:.2f},VOLT:{:.2f}'.format(datos_cinematica.get('velocidad',0), datos_bateria.get('voltaje',0))
-        Sistema.RadioFrecuencia.transmitir(mensaje)
+        # crea el paquete
+        paquete = {
+            'tiempo': datos_cinematica.get('tiempo', 0),
+            'distancia': datos_cinematica.get('distancia', 0),
+            'velocidad': datos_cinematica.get('velocidad', 0),
+            'voltaje': datos_bateria.get('voltaje', 0),
+            'corriente': datos_bateria.get('corriente', 0)
+        }
+        mensaje_json = json.dumps(paquete)
+        Sistema.RadioFrecuencia.transmitir(mensaje_json + '\n')
         # Mostrar
         Sistema.pantalla.imprimirDatos(Sistema.DatosBateria, Sistema.DatosCinematica)
-        
-        time.sleep(1) 
+        print(paquete)
+        # 🧹 Liberar memoria
+        Sistema.DatosCinematica.clear()
+        Sistema.DatosBateria.clear()
+        gc.collect()
 
         
         
@@ -166,6 +186,7 @@ def main():
 
 if __name__ == '__main__':
     main()
+
 
 
 
