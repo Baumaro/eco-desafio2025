@@ -1,54 +1,50 @@
 from machine import Pin, SPI
-from ili9341 import ILI9341, color565
 import time
+import ili9341
 
-# Pines iguales a tu sistema
-RST = 5
-DC = 4
-CS = 9
-SCK = 10
-MOSI = 11
+# -------------------------
+# Pines según tu PCB
+# -------------------------
+PIN_SCK  = 8   # SPI1 SCK
+PIN_MOSI = 7   # SPI1 TX
+PIN_CS   = 5   # Chip Select
+PIN_DC   = 3   # D/C
+PIN_RST  = 4   # Reset
 
+# -------------------------
 # Inicializa SPI1
-spi = SPI(1, baudrate=20000000, polarity=0, phase=0,
-          sck=Pin(SCK), mosi=Pin(MOSI))
+# -------------------------
+spi = SPI(
+    1,  # SPI1
+    baudrate=40000000,
+    polarity=0,
+    phase=0,
+    sck=Pin(PIN_SCK),
+    mosi=Pin(PIN_MOSI),
+    miso=None
+)
 
-# Inicializa la pantalla con rotación 1 (horizontal)
-tft = ILI9341(spi, cs=Pin(CS), dc=Pin(DC), rst=Pin(RST),
-              w=320, h=240, r=1)
+# -------------------------
+# Inicializa ILI9341
+# -------------------------
+tft = ili9341.ILI9341(
+    spi,
+    cs=Pin(PIN_CS),
+    dc=Pin(PIN_DC),
+    rst=Pin(PIN_RST),
+    w=240,
+    h=320,
+    rotation=0
+)
 
-# Limpia pantalla
-tft.fill_rectangle(0, 0, tft.width, tft.height, color565(0, 0, 0))
-
-# Texto de inicio
-tft.set_color(color565(255, 255, 255), color565(0, 0, 0))
-tft.set_pos(20, 40)
-tft.write("Test ILI9341 - Raspberry Pi Pico\n")
-tft.write("------------------------------\n")
-print("pepep")
+# -------------------------
+# TEST RÁPIDO
+# -------------------------
+tft.fill(ili9341.color565(0, 0, 255))    # Pantalla azul
 time.sleep(1)
 
-# Mostrar colores de prueba
-colores = [
-    ("ROJO", (255, 0, 0)),
-    ("VERDE", (0, 255, 0)),
-    ("AZUL", (0, 0, 255)),
-    ("BLANCO", (255, 255, 255)),
-    ("AMARILLO", (255, 255, 0)),
-]
+tft.fill(ili9341.color565(0, 0, 0))      # Pantalla negra
 
-for nombre, rgb in colores:
-    color = color565(*rgb)
-    tft.fill_rectangle(0, 0, tft.width, tft.height, color)
-    tft.set_color(color565(0, 0, 0), color)
-    tft.set_pos(60, 110)
-    tft.write(f"COLOR: {nombre}\n")
-    time.sleep(1)
+tft.fill_rect(30, 40, 180, 150, ili9341.color565(255, 0, 0))  # Rectángulo rojo
 
-# Pantalla final
-
-tft.fill_rectangle(0, 0, tft.width, tft.height, color565(255, 255, 255))
-tft.set_color(color565(0, 0, 0), color565(255, 255, 255))
-tft.set_pos(50, 100)
-tft.write("Pantalla conectada correctamente!\n")
-tft.write("Driver ILI9341 funcionando\n")
+tft.text("PICO 2W OK!", 60, 120, ili9341.color565(255, 255, 255))
