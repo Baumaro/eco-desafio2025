@@ -126,6 +126,7 @@ class ILI9341:
         self.rst = rst
         self.width = width
         self.height = height
+        self._rotation = rotation
 
         self.cs.init(Pin.OUT, value=1)
         self.dc.init(Pin.OUT, value=0)
@@ -176,8 +177,7 @@ class ILI9341:
         self.write_cmd(0x3A)
         self.write_data(0x55)  # 16 bit
 
-        self.write_cmd(0x36)
-        self.write_data(0x48)  # MX BGR
+        self.set_rotation(self._rotation)
 
         self.write_cmd(0x11)
         time.sleep_ms(120)
@@ -282,3 +282,29 @@ class ILI9341:
         for ch in string:
             self.char(x, y, ch, color)
             x += 8
+    
+    def set_rotation(self, rotation):
+        rot = rotation % 4
+
+        if rot == 0:
+            madctl = 0x48   # MX, BGR
+            self.width = 240
+            self.height = 320
+
+        elif rot == 1:
+            madctl = 0x28   # MV | BGR
+            self.width = 320
+            self.height = 240
+
+        elif rot == 2:
+            madctl = 0x88   # MY | BGR
+            self.width = 240
+            self.height = 320
+
+        elif rot == 3:
+            madctl = 0xE8   # MX | MY | MV | BGR
+            self.width = 320
+            self.height = 240
+
+        self.write_cmd(0x36)
+        self.write_data(madctl)
