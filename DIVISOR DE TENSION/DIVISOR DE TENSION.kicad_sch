@@ -3,7 +3,7 @@
 	(generator "eeschema")
 	(generator_version "9.0")
 	(uuid "5a3e09dd-4fa0-43cf-b1ee-b1ac668e8ec5")
-	(paper "A4")
+	(paper "User" 132.004 101.6)
 	(title_block
 		(title "Divisor de tension")
 		(date "2025-09-02")
@@ -12,7 +12,7 @@
 		(comment 1 "Bautista Otero")
 	)
 	(lib_symbols
-		(symbol "Connector:Conn_01x01_Pin"
+		(symbol "Connector:Conn_01x02_Socket"
 			(pin_names
 				(offset 1.016)
 				(hide yes)
@@ -28,8 +28,8 @@
 					)
 				)
 			)
-			(property "Value" "Conn_01x01_Pin"
-				(at 0 -2.54 0)
+			(property "Value" "Conn_01x02_Socket"
+				(at 0 -5.08 0)
 				(effects
 					(font
 						(size 1.27 1.27)
@@ -54,7 +54,7 @@
 					(hide yes)
 				)
 			)
-			(property "Description" "Generic connector, single row, 01x01, script generated"
+			(property "Description" "Generic connector, single row, 01x02, script generated"
 				(at 0 0 0)
 				(effects
 					(font
@@ -89,135 +89,10 @@
 					(hide yes)
 				)
 			)
-			(symbol "Conn_01x01_Pin_1_1"
-				(rectangle
-					(start 0.8636 0.127)
-					(end 0 -0.127)
-					(stroke
-						(width 0.1524)
-						(type default)
-					)
-					(fill
-						(type outline)
-					)
-				)
+			(symbol "Conn_01x02_Socket_1_1"
 				(polyline
 					(pts
-						(xy 1.27 0) (xy 0.8636 0)
-					)
-					(stroke
-						(width 0.1524)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(pin passive line
-					(at 5.08 0 180)
-					(length 3.81)
-					(name "Pin_1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-			)
-			(embedded_fonts no)
-		)
-		(symbol "Connector:Screw_Terminal_01x02"
-			(pin_names
-				(offset 1.016)
-				(hide yes)
-			)
-			(exclude_from_sim no)
-			(in_bom yes)
-			(on_board yes)
-			(property "Reference" "J"
-				(at 0 2.54 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Value" "Screw_Terminal_01x02"
-				(at 0 -5.08 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Footprint" ""
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Datasheet" "~"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Description" "Generic screw terminal, single row, 01x02, script generated (kicad-library-utils/schlib/autogen/connector/)"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "ki_keywords" "screw terminal"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "ki_fp_filters" "TerminalBlock*:*"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(symbol "Screw_Terminal_01x02_1_1"
-				(rectangle
-					(start -1.27 1.27)
-					(end 1.27 -3.81)
-					(stroke
-						(width 0.254)
-						(type default)
-					)
-					(fill
-						(type background)
-					)
-				)
-				(polyline
-					(pts
-						(xy -0.5334 0.3302) (xy 0.3302 -0.508)
+						(xy -1.27 0) (xy -0.508 0)
 					)
 					(stroke
 						(width 0.1524)
@@ -229,7 +104,7 @@
 				)
 				(polyline
 					(pts
-						(xy -0.5334 -2.2098) (xy 0.3302 -3.048)
+						(xy -1.27 -2.54) (xy -0.508 -2.54)
 					)
 					(stroke
 						(width 0.1524)
@@ -239,10 +114,10 @@
 						(type none)
 					)
 				)
-				(polyline
-					(pts
-						(xy -0.3556 0.508) (xy 0.508 -0.3302)
-					)
+				(arc
+					(start 0 -0.508)
+					(mid -0.5058 0)
+					(end 0 0.508)
 					(stroke
 						(width 0.1524)
 						(type default)
@@ -251,32 +126,10 @@
 						(type none)
 					)
 				)
-				(polyline
-					(pts
-						(xy -0.3556 -2.032) (xy 0.508 -2.8702)
-					)
-					(stroke
-						(width 0.1524)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(circle
-					(center 0 0)
-					(radius 0.635)
-					(stroke
-						(width 0.1524)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(circle
-					(center 0 -2.54)
-					(radius 0.635)
+				(arc
+					(start 0 -3.048)
+					(mid -0.5058 -2.54)
+					(end 0 -2.032)
 					(stroke
 						(width 0.1524)
 						(type default)
@@ -324,26 +177,24 @@
 			)
 			(embedded_fonts no)
 		)
-		(symbol "Device:R"
-			(pin_numbers
-				(hide yes)
-			)
+		(symbol "Device:R_Potentiometer_Trim"
 			(pin_names
-				(offset 0)
+				(offset 1.016)
+				(hide yes)
 			)
 			(exclude_from_sim no)
 			(in_bom yes)
 			(on_board yes)
-			(property "Reference" "R"
-				(at 2.032 0 90)
+			(property "Reference" "RV"
+				(at -4.445 0 90)
 				(effects
 					(font
 						(size 1.27 1.27)
 					)
 				)
 			)
-			(property "Value" "R"
-				(at 0 0 90)
+			(property "Value" "R_Potentiometer_Trim"
+				(at -2.54 0 90)
 				(effects
 					(font
 						(size 1.27 1.27)
@@ -351,7 +202,7 @@
 				)
 			)
 			(property "Footprint" ""
-				(at -1.778 0 90)
+				(at 0 0 0)
 				(effects
 					(font
 						(size 1.27 1.27)
@@ -368,7 +219,7 @@
 					(hide yes)
 				)
 			)
-			(property "Description" "Resistor"
+			(property "Description" "Trim-potentiometer"
 				(at 0 0 0)
 				(effects
 					(font
@@ -377,7 +228,7 @@
 					(hide yes)
 				)
 			)
-			(property "ki_keywords" "R res resistor"
+			(property "ki_keywords" "resistor variable trimpot trimmer"
 				(at 0 0 0)
 				(effects
 					(font
@@ -386,7 +237,7 @@
 					(hide yes)
 				)
 			)
-			(property "ki_fp_filters" "R_*"
+			(property "ki_fp_filters" "Potentiometer*"
 				(at 0 0 0)
 				(effects
 					(font
@@ -395,10 +246,10 @@
 					(hide yes)
 				)
 			)
-			(symbol "R_0_1"
+			(symbol "R_Potentiometer_Trim_0_1"
 				(rectangle
-					(start -1.016 -2.54)
-					(end 1.016 2.54)
+					(start 1.016 2.54)
+					(end -1.016 -2.54)
 					(stroke
 						(width 0.254)
 						(type default)
@@ -407,12 +258,36 @@
 						(type none)
 					)
 				)
+				(polyline
+					(pts
+						(xy 1.524 0.762) (xy 1.524 -0.762)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 2.54 0) (xy 1.524 0)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
 			)
-			(symbol "R_1_1"
+			(symbol "R_Potentiometer_Trim_1_1"
 				(pin passive line
 					(at 0 3.81 270)
 					(length 1.27)
-					(name "~"
+					(name "1"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -430,7 +305,25 @@
 				(pin passive line
 					(at 0 -3.81 90)
 					(length 1.27)
-					(name "~"
+					(name "3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 3.81 0 180)
+					(length 1.27)
+					(name "2"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -640,167 +533,143 @@
 		)
 	)
 	(junction
-		(at 132.08 100.33)
+		(at 66.04 34.29)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "8902f367-6eec-4298-bc7b-a0ecb8398470")
+		(uuid "f792def1-d9f8-41c5-bc6a-dca81e0e001e")
 	)
-	(junction
-		(at 175.26 91.44)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "9c4fce3f-615e-4c8c-aeac-e4259695a768")
+	(no_connect
+		(at 66.04 24.13)
+		(uuid "22cf77c0-6dfd-4908-afe1-f0afd6ebcf82")
+	)
+	(no_connect
+		(at 66.04 44.45)
+		(uuid "aab91060-c117-4d72-9e9a-6299e97c6ac4")
 	)
 	(wire
 		(pts
-			(xy 161.29 100.33) (xy 132.08 100.33)
+			(xy 66.04 34.29) (xy 66.04 36.83)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "059af875-e4f1-44d2-b51b-81dc6ca9d142")
+		(uuid "57e3b8e4-dae9-4e48-8a4a-5f201454dcdd")
 	)
 	(wire
 		(pts
-			(xy 173.99 91.44) (xy 175.26 91.44)
+			(xy 66.04 31.75) (xy 66.04 34.29)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "235cd304-9bcf-47f6-a51c-f879be956123")
+		(uuid "672d7719-79fa-410b-87e9-a57cb7148a02")
 	)
 	(wire
 		(pts
-			(xy 156.21 91.44) (xy 157.48 91.44)
+			(xy 66.04 34.29) (xy 67.31 34.29)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "2d0edeb0-2085-4e2d-b07a-baae03859608")
+		(uuid "9fd7a4cf-e2ba-4415-8a03-d0d4b9fd66a2")
 	)
-	(wire
-		(pts
-			(xy 124.46 107.95) (xy 132.08 107.95)
+	(global_label "VOLTAJE"
+		(shape input)
+		(at 88.9 34.29 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
 		)
-		(stroke
-			(width 0)
-			(type default)
+		(uuid "239265e5-703b-4420-8886-d34c8aa669a9")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 88.9 34.29 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
 		)
-		(uuid "321916b0-a2da-421f-b2e0-4938cbc5aedd")
 	)
-	(wire
-		(pts
-			(xy 165.1 91.44) (xy 166.37 91.44)
+	(global_label "V_BAT"
+		(shape input)
+		(at 69.85 27.94 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
 		)
-		(stroke
-			(width 0)
-			(type default)
+		(uuid "4edc2daf-d365-4e78-9426-167595c189f4")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 69.85 27.94 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
 		)
-		(uuid "7085cada-550a-42cc-84b8-182d466563e1")
 	)
-	(wire
-		(pts
-			(xy 147.32 91.44) (xy 148.59 91.44)
+	(global_label "GND"
+		(shape input)
+		(at 88.9 36.83 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
 		)
-		(stroke
-			(width 0)
-			(type default)
+		(uuid "7a2ca36d-d1cb-481b-898f-0fc1e42a5c06")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 88.9 36.83 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
 		)
-		(uuid "8ae35333-dd1e-46f2-9420-77202d6a9581")
 	)
-	(wire
-		(pts
-			(xy 138.43 97.79) (xy 138.43 91.44)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "ac335363-5c69-4c93-9bf0-5d477d110d20")
-	)
-	(wire
-		(pts
-			(xy 132.08 97.79) (xy 138.43 97.79)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "c37064fa-3608-40b2-911b-b5c76fa4bdfd")
-	)
-	(wire
-		(pts
-			(xy 138.43 91.44) (xy 139.7 91.44)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "c5bb9c11-c4a7-4e47-889d-9e33189fc148")
-	)
-	(wire
-		(pts
-			(xy 175.26 100.33) (xy 168.91 100.33)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "cf2267e5-82a0-43e2-b3bc-6e60f02812fd")
-	)
-	(wire
-		(pts
-			(xy 132.08 107.95) (xy 132.08 100.33)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "ed308151-4dba-4bdb-a16f-7f06cb11b798")
-	)
-	(wire
-		(pts
-			(xy 175.26 91.44) (xy 175.26 92.71)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "eff2091d-b7b5-48eb-a73a-03f1f860f3fa")
-	)
-	(symbol
-		(lib_id "Mechanical:MountingHole")
-		(at 179.07 107.95 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom no)
-		(on_board yes)
-		(dnp no)
+	(global_label "VOLTAJE"
+		(shape input)
+		(at 67.31 34.29 0)
 		(fields_autoplaced yes)
-		(uuid "10b438d1-9f32-4b68-8d82-7423601aae7a")
-		(property "Reference" "H3"
-			(at 181.61 106.6799 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "942f2454-cdd6-4234-afc4-8d6272ed3073")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 77.9152 34.29 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify left)
+				(hide yes)
 			)
 		)
-		(property "Value" "MountingHole"
-			(at 181.61 109.2199 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
+	)
+	(global_label "V_BAT"
+		(shape input)
+		(at 34.29 36.83 0)
+		(effects
+			(font
+				(size 1.27 1.27)
 			)
+			(justify left)
 		)
-		(property "Footprint" "MountingHole:MountingHole_2.2mm_M2"
-			(at 179.07 107.95 0)
+		(uuid "d64b81bd-d938-422e-bc3d-494c65814818")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 34.29 36.83 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -808,8 +677,19 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "~"
-			(at 179.07 107.95 0)
+	)
+	(global_label "GND"
+		(shape input)
+		(at 36.83 50.8 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "e12858a4-1c2b-4d12-a390-ded374fb5e9a")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 36.83 50.8 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -817,8 +697,19 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "Mounting Hole without connection"
-			(at 179.07 107.95 0)
+	)
+	(global_label "GND"
+		(shape input)
+		(at 34.29 39.37 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "e9d541b6-fb54-4a71-aaf0-adb1e5fe803e")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 34.29 39.37 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -826,243 +717,55 @@
 				(hide yes)
 			)
 		)
-		(instances
-			(project "DIVISOR DE TENSION"
-				(path "/5a3e09dd-4fa0-43cf-b1ee-b1ac668e8ec5"
-					(reference "H3")
-					(unit 1)
+	)
+	(global_label "GND"
+		(shape input)
+		(at 69.85 40.64 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "fb8eeddd-5ba3-458b-8098-2bf715ebeb2c")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 69.85 40.64 0)
+			(effects
+				(font
+					(size 1.27 1.27)
 				)
+				(hide yes)
 			)
 		)
 	)
 	(symbol
-		(lib_id "Device:R")
-		(at 165.1 100.33 270)
+		(lib_id "Connector:Conn_01x02_Socket")
+		(at 29.21 39.37 180)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
 		(fields_autoplaced yes)
-		(uuid "1317264c-92be-4dd9-97cf-cebfab561e50")
-		(property "Reference" "R5"
-			(at 165.1 93.98 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "47k"
-			(at 165.1 96.52 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "Resistor_THT:R_Axial_DIN0204_L3.6mm_D1.6mm_P7.62mm_Horizontal"
-			(at 165.1 98.552 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 165.1 100.33 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Resistor"
-			(at 165.1 100.33 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "2"
-			(uuid "d43a1515-3de3-483e-a30f-969e528e94f8")
-		)
-		(pin "1"
-			(uuid "bcb86a79-54ad-4857-ad6d-02ec2d2aa892")
-		)
-		(instances
-			(project "DIVISOR DE TENSION"
-				(path "/5a3e09dd-4fa0-43cf-b1ee-b1ac668e8ec5"
-					(reference "R5")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Connector:Conn_01x01_Pin")
-		(at 180.34 91.44 180)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "22e979f9-189b-4ca4-b6c8-b428f7cddcdb")
-		(property "Reference" "J2"
-			(at 191.516 89.408 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "Conn_01x01_Pin"
-			(at 191.262 91.44 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "Connector_Pin:Pin_D0.7mm_L6.5mm_W1.8mm_FlatFork"
-			(at 180.34 91.44 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 180.34 91.44 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Generic connector, single row, 01x01, script generated"
-			(at 180.34 91.44 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "72d52426-cdd0-4411-b55c-13f9cf5213f5")
-		)
-		(instances
-			(project ""
-				(path "/5a3e09dd-4fa0-43cf-b1ee-b1ac668e8ec5"
-					(reference "J2")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:R")
-		(at 161.29 91.44 90)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "5962f70e-354a-4367-8def-9255e215556c")
-		(property "Reference" "R1"
-			(at 161.29 85.09 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "3.3 MEGA"
-			(at 161.29 87.63 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "Resistor_THT:R_Axial_DIN0204_L3.6mm_D1.6mm_P7.62mm_Horizontal"
-			(at 161.29 93.218 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 161.29 91.44 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Resistor"
-			(at 161.29 91.44 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "2"
-			(uuid "a6a2b73f-8532-43bd-a306-3c95297a8e57")
-		)
-		(pin "1"
-			(uuid "8cd28ee0-b023-4f47-9434-5d93d87d1a27")
-		)
-		(instances
-			(project ""
-				(path "/5a3e09dd-4fa0-43cf-b1ee-b1ac668e8ec5"
-					(reference "R1")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Connector:Screw_Terminal_01x02")
-		(at 127 100.33 180)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "78d017b2-9917-4cb2-bf59-8b3b43dedbf6")
+		(uuid "375aad1c-e9f1-45cc-8321-bc111436467d")
 		(property "Reference" "J1"
-			(at 127 91.44 0)
+			(at 29.845 31.75 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 			)
 		)
-		(property "Value" "Screw_Terminal_01x02"
-			(at 127 93.98 0)
+		(property "Value" "Conn_01x02_Socket"
+			(at 29.845 34.29 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 			)
 		)
-		(property "Footprint" "TerminalBlock:TerminalBlock_MaiXu_MX126-5.0-02P_1x02_P5.00mm"
-			(at 127 100.33 0)
+		(property "Footprint" "Connector_JST:JST_EH_B2B-EH-A_1x02_P2.50mm_Vertical"
+			(at 29.21 39.37 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1071,7 +774,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 127 100.33 0)
+			(at 29.21 39.37 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1079,20 +782,20 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "Generic screw terminal, single row, 01x02, script generated (kicad-library-utils/schlib/autogen/connector/)"
-			(at 127 100.33 0)
+		(property "Description" "Generic connector, single row, 01x02, script generated"
+			(at 29.21 39.37 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(hide yes)
 			)
-		)
-		(pin "1"
-			(uuid "49418658-7741-4e47-86e5-2b1c03223e62")
 		)
 		(pin "2"
-			(uuid "fd9b9970-649c-443c-bbf5-340519276317")
+			(uuid "1e98c120-3dcc-453f-84ad-b86712335450")
+		)
+		(pin "1"
+			(uuid "6bb0cf19-066c-4ccd-8207-2a1fc8e283d0")
 		)
 		(instances
 			(project ""
@@ -1104,96 +807,35 @@
 		)
 	)
 	(symbol
-		(lib_id "Mechanical:MountingHole")
-		(at 179.07 83.82 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom no)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "7aca3bfe-6e58-46bd-b60c-a03925762b20")
-		(property "Reference" "H2"
-			(at 181.61 82.5499 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "MountingHole"
-			(at 181.61 85.0899 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "MountingHole:MountingHole_2.2mm_M2"
-			(at 179.07 83.82 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 179.07 83.82 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Mounting Hole without connection"
-			(at 179.07 83.82 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(instances
-			(project "DIVISOR DE TENSION"
-				(path "/5a3e09dd-4fa0-43cf-b1ee-b1ac668e8ec5"
-					(reference "H2")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:R")
-		(at 152.4 91.44 90)
+		(lib_id "Connector:Conn_01x02_Socket")
+		(at 93.98 34.29 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "97aa0ed7-3d3b-45fe-a5a5-acd9b4e25e29")
-		(property "Reference" "R2"
-			(at 152.4 85.09 90)
+		(fields_autoplaced yes)
+		(uuid "63299b0a-f94a-473c-9c2d-ba5e380a7d9c")
+		(property "Reference" "J2"
+			(at 95.25 34.2899 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
 			)
 		)
-		(property "Value" "10 MEGA"
-			(at 151.892 87.63 90)
+		(property "Value" "Conn_01x02_Socket"
+			(at 95.25 36.8299 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
 			)
 		)
-		(property "Footprint" "Resistor_THT:R_Axial_DIN0204_L3.6mm_D1.6mm_P7.62mm_Horizontal"
-			(at 152.4 93.218 90)
+		(property "Footprint" "Connector_JST:JST_EH_B2B-EH-A_1x02_P2.50mm_Vertical"
+			(at 93.98 34.29 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1202,7 +844,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 152.4 91.44 0)
+			(at 93.98 34.29 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1210,8 +852,8 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "Resistor"
-			(at 152.4 91.44 0)
+		(property "Description" "Generic connector, single row, 01x02, script generated"
+			(at 93.98 34.29 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1220,15 +862,15 @@
 			)
 		)
 		(pin "2"
-			(uuid "9ab8f12d-a94d-4acf-a49f-be8c6e8bfc3a")
+			(uuid "83cda8ef-553c-4f17-b826-fc50b3f69a70")
 		)
 		(pin "1"
-			(uuid "2398e5d4-5ab9-47e5-b0b6-334864609528")
+			(uuid "986905cc-f000-43df-ba28-7c6de21a958f")
 		)
 		(instances
-			(project "DIVISOR DE TENSION"
+			(project ""
 				(path "/5a3e09dd-4fa0-43cf-b1ee-b1ac668e8ec5"
-					(reference "R2")
+					(reference "J2")
 					(unit 1)
 				)
 			)
@@ -1236,7 +878,7 @@
 	)
 	(symbol
 		(lib_id "Mechanical:MountingHole")
-		(at 120.65 83.82 0)
+		(at 33.02 26.67 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom no)
@@ -1245,7 +887,7 @@
 		(fields_autoplaced yes)
 		(uuid "a2f2c9a8-6d6c-403d-97b6-27238da08ae1")
 		(property "Reference" "H1"
-			(at 123.19 82.5499 0)
+			(at 35.56 25.3999 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1254,7 +896,7 @@
 			)
 		)
 		(property "Value" "MountingHole"
-			(at 123.19 85.0899 0)
+			(at 35.56 27.9399 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1263,7 +905,7 @@
 			)
 		)
 		(property "Footprint" "MountingHole:MountingHole_2.2mm_M2"
-			(at 120.65 83.82 0)
+			(at 33.02 26.67 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1272,7 +914,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 120.65 83.82 0)
+			(at 33.02 26.67 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1281,7 +923,7 @@
 			)
 		)
 		(property "Description" "Mounting Hole without connection"
-			(at 120.65 83.82 0)
+			(at 33.02 26.67 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1299,33 +941,35 @@
 		)
 	)
 	(symbol
-		(lib_id "Device:R")
-		(at 143.51 91.44 90)
+		(lib_id "Device:R_Potentiometer_Trim")
+		(at 66.04 27.94 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
 		(fields_autoplaced yes)
-		(uuid "aff6528d-2de4-4c63-a34e-7c3d72657510")
-		(property "Reference" "R6"
-			(at 143.51 85.09 90)
+		(uuid "b222df12-ac1e-4546-93d2-98d74022dcd8")
+		(property "Reference" "RV1"
+			(at 63.5 26.6699 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify right)
 			)
 		)
-		(property "Value" "47k"
-			(at 143.51 87.63 90)
+		(property "Value" "R_Potentiometer_Trim"
+			(at 63.5 29.2099 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify right)
 			)
 		)
-		(property "Footprint" "Resistor_THT:R_Axial_DIN0204_L3.6mm_D1.6mm_P7.62mm_Horizontal"
-			(at 143.51 93.218 90)
+		(property "Footprint" "Potentiometer_THT:Potentiometer_Bourns_3266Y_Vertical"
+			(at 66.04 27.94 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1334,7 +978,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 143.51 91.44 0)
+			(at 66.04 27.94 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1342,42 +986,45 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "Resistor"
-			(at 143.51 91.44 0)
+		(property "Description" "Trim-potentiometer"
+			(at 66.04 27.94 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(hide yes)
 			)
-		)
-		(pin "2"
-			(uuid "2503c081-114c-4773-8fd4-a7173295e242")
 		)
 		(pin "1"
-			(uuid "eb739366-5087-4773-b9bc-9b38d7461647")
+			(uuid "4e3af781-6f80-4850-a57e-baffaf945ef2")
+		)
+		(pin "3"
+			(uuid "4954f10b-704a-4cdb-add4-ee007d3a7588")
+		)
+		(pin "2"
+			(uuid "ec2a3c30-c4a1-4595-9ef8-26ee5fc3535d")
 		)
 		(instances
-			(project "DIVISOR DE TENSION"
+			(project ""
 				(path "/5a3e09dd-4fa0-43cf-b1ee-b1ac668e8ec5"
-					(reference "R6")
+					(reference "RV1")
 					(unit 1)
 				)
 			)
 		)
 	)
 	(symbol
-		(lib_id "Device:R")
-		(at 175.26 96.52 180)
+		(lib_id "Device:R_Potentiometer_Trim")
+		(at 66.04 40.64 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
 		(fields_autoplaced yes)
-		(uuid "dd3a0509-46c6-4931-b120-07eacfe00cb4")
-		(property "Reference" "R4"
-			(at 177.8 95.2499 0)
+		(uuid "db59ac8a-e83a-4e0d-bbac-fc0a543db62e")
+		(property "Reference" "RV2"
+			(at 63.5 39.3699 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1385,8 +1032,8 @@
 				(justify right)
 			)
 		)
-		(property "Value" "1 MEGA"
-			(at 177.8 97.7899 0)
+		(property "Value" "R_Potentiometer_Trim"
+			(at 63.5 41.9099 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1394,8 +1041,8 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" "Resistor_THT:R_Axial_DIN0204_L3.6mm_D1.6mm_P7.62mm_Horizontal"
-			(at 177.038 96.52 90)
+		(property "Footprint" "Potentiometer_THT:Potentiometer_Bourns_3266Y_Vertical"
+			(at 66.04 40.64 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1404,7 +1051,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 175.26 96.52 0)
+			(at 66.04 40.64 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1412,25 +1059,28 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "Resistor"
-			(at 175.26 96.52 0)
+		(property "Description" "Trim-potentiometer"
+			(at 66.04 40.64 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(hide yes)
 			)
-		)
-		(pin "2"
-			(uuid "7f2774b4-afd3-4fb4-8ae0-acaaed30915a")
 		)
 		(pin "1"
-			(uuid "540d9125-42bd-48bf-a69d-3a91fd714c0e")
+			(uuid "35188ec4-d1dc-4820-8d27-122ed0e8b83c")
+		)
+		(pin "3"
+			(uuid "b2d2d360-b68c-4f9d-b0c1-f64ae4750fef")
+		)
+		(pin "2"
+			(uuid "f86cad5f-576b-430b-9304-fe98df6ccdf5")
 		)
 		(instances
-			(project "DIVISOR DE TENSION"
+			(project ""
 				(path "/5a3e09dd-4fa0-43cf-b1ee-b1ac668e8ec5"
-					(reference "R4")
+					(reference "RV2")
 					(unit 1)
 				)
 			)
@@ -1438,7 +1088,7 @@
 	)
 	(symbol
 		(lib_id "Mechanical:MountingHole_Pad")
-		(at 121.92 107.95 90)
+		(at 34.29 50.8 90)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom no)
@@ -1447,7 +1097,7 @@
 		(fields_autoplaced yes)
 		(uuid "e34a6e74-f525-4dc2-bade-b7244ea26cf6")
 		(property "Reference" "H4"
-			(at 120.65 101.6 90)
+			(at 33.02 44.45 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1455,7 +1105,7 @@
 			)
 		)
 		(property "Value" "MountingHole_Pad"
-			(at 120.65 104.14 90)
+			(at 33.02 46.99 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1463,7 +1113,7 @@
 			)
 		)
 		(property "Footprint" "MountingHole:MountingHole_2.2mm_M2_DIN965_Pad"
-			(at 121.92 107.95 0)
+			(at 34.29 50.8 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1472,7 +1122,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 121.92 107.95 0)
+			(at 34.29 50.8 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1481,7 +1131,7 @@
 			)
 		)
 		(property "Description" "Mounting Hole with connection"
-			(at 121.92 107.95 0)
+			(at 34.29 50.8 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1496,74 +1146,6 @@
 			(project ""
 				(path "/5a3e09dd-4fa0-43cf-b1ee-b1ac668e8ec5"
 					(reference "H4")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:R")
-		(at 170.18 91.44 90)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "ff6bc373-39a5-4d9c-8ea7-c9d0f2030c50")
-		(property "Reference" "R3"
-			(at 170.18 85.09 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "150k"
-			(at 170.18 87.63 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "Resistor_THT:R_Axial_DIN0204_L3.6mm_D1.6mm_P7.62mm_Horizontal"
-			(at 170.18 93.218 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 170.18 91.44 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Resistor"
-			(at 170.18 91.44 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "2"
-			(uuid "ff82bae2-fed7-4a9e-81c6-3da85b8fbca1")
-		)
-		(pin "1"
-			(uuid "da70b886-c8b9-4c86-b1fa-eabe1f79f38a")
-		)
-		(instances
-			(project "DIVISOR DE TENSION"
-				(path "/5a3e09dd-4fa0-43cf-b1ee-b1ac668e8ec5"
-					(reference "R3")
 					(unit 1)
 				)
 			)

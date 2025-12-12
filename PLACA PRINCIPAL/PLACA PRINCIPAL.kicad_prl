@@ -1,6 +1,6 @@
 {
   "board": {
-    "active_layer": 0,
+    "active_layer": 2,
     "active_layer_preset": "",
     "auto_track_width": true,
     "hidden_netclasses": [],
@@ -30,9 +30,33 @@
       "zones": true
     },
     "visible_items": [
+<<<<<<< Updated upstream
       12
     ],
     "visible_layers": "fffffff_ffffffff",
+=======
+      "vias",
+      "footprint_text",
+      "footprint_anchors",
+      "grid",
+      "footprints_front",
+      "footprints_back",
+      "footprint_values",
+      "footprint_references",
+      "tracks",
+      "drc_errors",
+      "drawing_sheet",
+      "bitmaps",
+      "pads",
+      "zones",
+      "drc_warnings",
+      "drc_exclusions",
+      "locked_item_shadows",
+      "conflict_shadows",
+      "shapes"
+    ],
+    "visible_layers": "00000000_00000000_0ffffff7_ffffffdf",
+>>>>>>> Stashed changes
     "zone_display_mode": 0
   },
   "git": {
@@ -42,7 +66,7 @@
   },
   "meta": {
     "filename": "PLACA PRINCIPAL.kicad_prl",
-    "version": 3
+    "version": 5
   },
   "net_inspector_panel": {
     "col_hidden": [

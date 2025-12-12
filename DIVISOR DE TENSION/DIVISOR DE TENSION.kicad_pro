@@ -48,8 +48,12 @@
         "silk_text_thickness": 0.09999999999999999,
         "silk_text_upright": false,
         "zones": {
+<<<<<<< Updated upstream
           "45_degree_only": false,
           "min_clearance": 0.7999999999999999
+=======
+          "min_clearance": 0.5
+>>>>>>> Stashed changes
         }
       },
       "diff_pair_dimensions": [
@@ -173,6 +177,7 @@
       "track_widths": [
         0.0,
         0.0,
+        1.2,
         2.0
       ],
       "tuning_pattern_settings": {
@@ -440,6 +445,7 @@
       "single_global_label": "ignore",
       "unannotated": "error",
       "unconnected_wire_endpoint": "warning",
+      "undefined_netclass": "error",
       "unit_value_mismatch": "error",
       "unresolved_variable": "error",
       "wire_dangling": "error"
